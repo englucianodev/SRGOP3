@@ -1,0 +1,74 @@
+[
+  {
+    "slide": 1,
+    "duration": 40,
+    "source": "Relatório, páginas 1, 2 e 4.",
+    "speech": "Olá, pessoal. Somos Wenderson de Jesus da Costa Silva e Luciano Ferreira Pontes, do curso de Análise e Desenvolvimento de Sistemas da Universidade Estadual do Maranhão. Hoje vamos apresentar o Vida Útil+, nosso projeto voltado ao consumo sustentável.\n\nA proposta é reunir informações sobre produtos e sua durabilidade em uma aplicação simples de consultar. Ao longo da apresentação, vamos explicar o problema que motivou o trabalho, mostrar como a aplicação funciona e comentar as tecnologias, os testes e a publicação. O ponto de partida é uma situação que faz parte do nosso dia a dia: a decisão de conservar, reparar ou substituir um produto."
+  },
+  {
+    "slide": 2,
+    "duration": 60,
+    "source": "Relatório, seção 1, página 4.",
+    "speech": "O problema que orientou o projeto foi o descarte prematuro de bens de consumo, associado à dificuldade de encontrar informações simples sobre a durabilidade desses produtos.\n\nPensem, por exemplo, em alguém que percebe um problema em um objeto de uso cotidiano. Antes de decidir pela troca, essa pessoa poderia procurar orientações sobre conservação ou sobre a possibilidade de reparo. Esse exemplo ajuda a entender a necessidade que motivou o Vida Útil+.\n\nNossa proposta é organizar essas informações em um catálogo acessível. Nele, o usuário pode pesquisar produtos, filtrar categorias e consultar detalhes. Também pode participar por meio do cadastro de novos itens.\n\nA intenção é apoiar uma reflexão sobre o uso dos produtos e sobre seu destino quando deixam de ser utilizados. É dessa relação entre informação e consumo que surge a conexão com o ODS 12."
+  },
+  {
+    "slide": 3,
+    "duration": 50,
+    "source": "Relatório, seção 1, página 4.",
+    "speech": "O ODS 12 é o Objetivo de Desenvolvimento Sustentável relacionado ao consumo e à produção responsáveis. No nosso trabalho, essa conexão aparece principalmente no incentivo ao uso consciente dos produtos e à redução do descarte prematuro.\n\nO público-alvo são consumidores em geral, especialmente pessoas que desejam conhecer melhor a durabilidade dos bens que utilizam. Por isso, procuramos manter uma experiência simples, sem exigir conhecimento técnico para consultar o catálogo.\n\nO objetivo da aplicação combina consulta e participação. A pessoa pode buscar informações e também cadastrar produtos para complementar os registros disponíveis no protótipo. A ideia é aproximar o tema da sustentabilidade de ações fáceis de compreender, como cuidar melhor de um item e considerar seu reparo. A partir dessa proposta, passamos ao desenvolvimento da aplicação."
+  },
+  {
+    "slide": 4,
+    "duration": 65,
+    "source": "Relatório, seções 2.1 a 2.3, páginas 4 a 6.",
+    "speech": "A principal mudança nesta etapa foi transformar uma interface inicialmente estática em uma aplicação interativa. Antes, o foco estava na apresentação visual. Na finalização, acrescentamos comportamentos que respondem às ações do usuário.\n\nOrganizamos o cabeçalho, a área de apresentação, o catálogo e as demais seções. Também criamos telas para cadastro, login, gerenciamento de produtos e consulta de detalhes. Quando alguém digita uma pesquisa ou escolhe uma categoria, a lista acompanha essa escolha.\n\nOutro recurso foi a persistência local, feita com o localStorage, um espaço de armazenamento do navegador. Ele permite manter os dados de usuários, a sessão e os produtos cadastrados após atualizar a página. Esses registros ficam vinculados àquele navegador e ao endereço da aplicação. Portanto, não aparecem automaticamente em outro dispositivo.\n\nAlém dessas funcionalidades, adaptamos a interface a diferentes tamanhos de tela. Para implementar esse conjunto de recursos, utilizamos as tecnologias do próximo slide."
+  },
+  {
+    "slide": 5,
+    "duration": 65,
+    "source": "Relatório, seções 1, 2.3, 3, 4 e 5.2, páginas 4, 6 a 11.",
+    "speech": "Cada tecnologia teve uma função no projeto. O React organiza a interface em componentes, que são partes reutilizáveis da tela. O Vite oferece o ambiente de desenvolvimento e prepara os arquivos da versão de produção.\n\nO JavaScript cuida da lógica das interações, como validar formulários, responder a cliques e consultar a API. O CSS define a aparência e a adaptação do layout ao computador, ao tablet e ao celular.\n\nO localStorage mantém os registros localmente. A DummyJSON fornece dados externos de produtos para demonstrarmos a integração com uma API, ou seja, uma forma de a aplicação solicitar informações a outro serviço.\n\nPor fim, o Git registra as versões do código, e o GitHub disponibiliza o repositório. A Vercel hospeda a aplicação para acesso pela internet. Assim, as ferramentas cobrem desde a construção da interface até sua publicação. Vamos agora acompanhar o percurso de quem utiliza o sistema."
+  },
+  {
+    "slide": 6,
+    "duration": 80,
+    "source": "Relatório, seções 2.1 a 2.3, páginas 4 a 6.",
+    "speech": "Este slide resume o fluxo da aplicação. O usuário começa na página inicial, onde encontra a apresentação do projeto e o catálogo. Para localizar um item, pode pesquisar pelo nome e selecionar uma categoria. Esses critérios atualizam os resultados exibidos.\n\nA aplicação também oferece cadastro e login. Depois de entrar, o usuário acessa a área do sistema e pode cadastrar ou editar produtos. O formulário inclui nome, categoria, vida útil, descrição, dicas de conservação, possibilidade de reparo e orientação para descarte responsável. O registro recebe a identificação de quem o cadastrou.\n\nAo abrir os detalhes, a pessoa consulta as informações disponíveis sobre aquele produto. É nesse ponto que a proposta do catálogo ganha utilidade: reunir orientações para ajudar a compreender melhor o item.\n\nO login demonstra o fluxo de autenticação dentro do escopo acadêmico. A sessão pode ser recuperada após atualizar a página, e o logout remove o registro da sessão. Como esse funcionamento usa armazenamento local, o compartilhamento de contas e produtos entre dispositivos ainda depende de uma evolução com servidor e banco de dados."
+  },
+  {
+    "slide": 7,
+    "duration": 95,
+    "source": "Relatório, seção 3, página 7.",
+    "speech": "Além dos registros do próprio projeto, integramos uma fonte externa chamada DummyJSON, destinada a testes e prototipagem. O endereço mostrado no código solicita uma lista de até doze produtos.\n\nPodemos entender esse processo em etapas. Primeiro, o fetch faz a consulta ao serviço. Em seguida, a aplicação verifica se a resposta foi bem-sucedida. Depois, o método json converte o conteúdo recebido em dados que o JavaScript consegue utilizar. JSON é um formato de troca de dados organizado em campos e valores.\n\nO passo seguinte é adaptar esses campos ao modelo do Vida Útil+. Por exemplo, title passa a ser nome, category passa a ser categoria, e thumbnail fornece a imagem. O map percorre os produtos e faz essa conversão.\n\nHá uma limitação importante: essa API não fornece a vida útil dos produtos. Por isso, a aplicação indica que essa informação não está disponível e identifica o registro como vindo da API externa.\n\nTambém controlamos o carregamento e as falhas com try, catch e finally. Assim, o usuário recebe uma mensagem quando a consulta demora ou apresenta erro, sem interromper a interface principal."
+  },
+  {
+    "slide": 8,
+    "duration": 85,
+    "source": "Relatório, seções 4.1 a 4.3, páginas 8 e 9.",
+    "speech": "Para organizar o código, dividimos a aplicação em componentes, páginas e dados. Componentes são partes da interface que podem ser reutilizadas. Por exemplo, ProductCard representa um produto, e ProductList utiliza esse componente para montar a lista. As páginas representam telas específicas, como cadastro, login e detalhes.\n\nO App centraliza as informações principais que podem mudar durante o uso. Chamamos essas informações de estado. O useState mantém valores como a pesquisa digitada, a categoria escolhida, o usuário conectado e a tela atual. Quando um desses valores muda, o React atualiza a interface de acordo com o novo estado.\n\nO useEffect participa de tarefas como recuperar a sessão salva e carregar os dados externos. Já as props permitem passar dados e funções entre os componentes.\n\nA navegação segue o conceito de SPA, uma aplicação de página única. As telas mudam por meio do estado, sem carregar um novo documento HTML a cada ação. Neste projeto, usamos esse controle diretamente, sem um roteador externo. Essa organização manteve a estrutura adequada ao tamanho da atividade e facilitou a manutenção."
+  },
+  {
+    "slide": 9,
+    "duration": 45,
+    "source": "Relatório, seções 2.1 e 5.1, páginas 5 e 10.",
+    "speech": "Aqui vemos a aplicação em diferentes tamanhos de tela. A responsividade permite que a organização visual acompanhe o espaço disponível no dispositivo.\n\nNos testes em computador, tablet e celular, verificamos se menus e campos se reorganizavam e se os cartões de produtos continuavam adequados à tela. Também observamos a ausência de rolagem horizontal, para evitar que a pessoa precisasse deslocar a página para os lados para acessar o conteúdo.\n\nO objetivo foi manter os principais fluxos utilizáveis nos três formatos. Essa verificação é importante porque o público pode acessar o catálogo tanto em uma tela grande quanto pelo celular. Além da aparência, também testamos o funcionamento dos recursos, como mostra o próximo slide."
+  },
+  {
+    "slide": 10,
+    "duration": 65,
+    "source": "Relatório, seção 5.1, página 10. No relatório, pesquisa está incluída no grupo Produtos; o slide a apresenta separadamente.",
+    "speech": "Antes da publicação, verificamos os principais fluxos da aplicação. Na parte de usuário, testamos cadastro, login, permanência da sessão após atualizar a página com F5 e logout. Nos produtos, conferimos cadastro, exibição, edição e consulta de detalhes.\n\nTambém testamos a busca por nome e categoria. Neste slide, pesquisa aparece como uma frente própria. No relatório, ela está dentro do grupo de produtos. Por isso, o relatório reúne cinco grupos, enquanto aqui os mesmos temas estão distribuídos em seis frentes.\n\nNa API, verificamos a apresentação dos dados e o tratamento de erros. Na organização React e SPA, avaliamos os estados, a navegação e o console. A responsividade completou a validação, com os resultados registrados como aprovados no relatório.\n\nPor último, executamos npm run build. Esse comando gerou com sucesso o pacote de produção, que reúne os arquivos preparados para publicação. Com essas verificações concluídas, passamos à disponibilização do projeto na internet."
+  },
+  {
+    "slide": 11,
+    "duration": 40,
+    "source": "Relatório, seção 5.2, páginas 10 e 11.",
+    "speech": "A publicação envolveu dois destinos com funções diferentes. No GitHub, disponibilizamos o código-fonte e a estrutura do projeto, permitindo consultar os componentes, as páginas, os estilos e as configurações.\n\nNa Vercel, disponibilizamos a aplicação para uso pelo navegador. O repositório foi conectado à hospedagem, completando o caminho entre o desenvolvimento local e o acesso público.\n\nOs endereços estão neste slide para quem quiser conhecer o código ou experimentar o sistema. Essa etapa encerrou a entrega técnica: a aplicação passou a ter uma versão publicada, além dos arquivos de desenvolvimento. Para concluir, vamos retomar os resultados e o que ainda pode evoluir."
+  },
+  {
+    "slide": 12,
+    "duration": 65,
+    "source": "Relatório, seção 6, página 11.",
+    "speech": "Com o Vida Útil+, transformamos uma proposta inicialmente estática em uma aplicação interativa e publicada. O catálogo ganhou busca, filtros e detalhes, além dos fluxos de cadastro, login e edição de produtos. Também organizamos o código com React e integramos dados externos.\n\nEntre os aprendizados, destacamos a divisão da interface em componentes e o controle dos estados. A migração para o React, a coordenação da navegação com a sessão e o tratamento dos dados da API foram desafios que exigiram ajustes e testes.\n\nA principal evolução futura é acrescentar um backend, que é a parte executada no servidor, com um banco de dados. Isso permitiria centralizar contas e produtos e compartilhar os registros entre dispositivos. Outra possibilidade é ampliar as fontes e melhorar as informações sobre durabilidade e conservação.\n\nO projeto aproxima o desenvolvimento web de uma questão cotidiana: como utilizar melhor aquilo que consumimos. A contribuição proposta é tornar essas informações mais acessíveis e apoiar escolhas conscientes. Agradecemos a atenção e ficamos à disposição para perguntas."
+  }
+]
